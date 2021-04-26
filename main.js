@@ -161,3 +161,60 @@ const inventory = [
     sold: 8,
   },
 ];
+
+const availableStocks = inventory.map((availableStock) => {
+  return availableStock.originalStock - availableStock.sold;
+});
+
+console.log('DIT IS DE VOORRAAD PER TV-SOORT: ' + availableStocks);
+
+function availableForSale2(arr) {
+  let total = 0;
+  arr.map((item) => { total += item;})
+  return total;
+}
+
+console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale2(availableStocks));
+
+// const container = document.getElementById('amountToSell');
+// container.textContent = availableForSale2(availableStocks);
+
+// Opdracht 2A
+
+const tvTypes = inventory.map((inventor) => {
+  return inventor.type;
+});
+
+console.log(tvTypes);
+console.log('\n');
+
+// Opdracht 2B
+
+const soldOut = inventory.filter((inventor) => {
+  return (inventor.originalStock - inventor.sold) === 0;
+});
+
+console.log(soldOut);
+console.log('\n');
+
+// Opdracht 2C
+
+const ambiLight = inventory.filter((inventor) => {
+  return inventor.options.ambiLight;
+});
+
+console.log('ALLE TV\'S MET AMBILIGHT: ');
+console.log(ambiLight);
+console.log('\n')
+
+// Opdracht 2D
+console.log('Sorted by Price: ')
+inventory.sort((a,b) => {return a.price - b.price});
+console.log(inventory)
+
+function sortByPrice(arr) {
+  arr.sort((a,b) => {return a.price - b.price});
+  return arr;
+}
+
+console.log(sortByPrice(inventory));
