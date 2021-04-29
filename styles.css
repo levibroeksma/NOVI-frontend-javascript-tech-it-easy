@@ -16,15 +16,47 @@ h1 {
     font-size: 40px;
     color: forestgreen;
 }
+h2 {
+    font-weight: 100;
+}
 
 div {
-    padding: 30px 0;
-    width: 500px;
+    padding: 30px 0 0 0;
+    width: 750px;
     text-align: center;
+}
+
+.display {
+    position: relative;
+    width: 100%;
+    display: flex;
 }
 
 #amountToSell {
     color: red;
+}
+
+#projectedRevenue,
+.projectedRevenue span{
+    position: relative;
+    color: blue;
+    width: 50%;
+}
+
+#achievedRevenue,
+.achievedRevenue span
+{
+    position: relative;
+    color: green;
+    width: 50%;
+}
+
+#achievedRevenue,
+.achievedRevenue span,
+#amountToSell,
+#projectedRevenue,
+.projectedRevenue span {
     font-weight: bold;
     font-size: 40px;
 }
+

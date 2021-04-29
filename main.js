@@ -176,8 +176,8 @@ function availableForSale(arr) {
 
 console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale(availableStocks));
 
-// const container = document.getElementById('amountToSell');
-// container.textContent = availableForSale(availableStocks);
+const container = document.getElementById('amountToSell');
+container.textContent = availableForSale(availableStocks);
 
 // Opdracht 2A
 
@@ -205,12 +205,12 @@ const ambiLight = inventory.filter((inventor) => {
 
 console.log('ALLE TV\'S MET AMBILIGHT: ');
 console.log(ambiLight);
-console.log('\n')
+console.log('\n');
 
 // Opdracht 2D
-console.log('Sorted by Price: ')
+console.log('Sorted by Price: ');
 inventory.sort((a,b) => {return a.price - b.price});
-console.log(inventory)
+console.log(inventory);
 
 function sortByPrice(arr) {
   arr.sort((a,b) => {return a.price - b.price});
@@ -221,11 +221,11 @@ console.log(sortByPrice(inventory));
 
 // Opdracht 3A
 
-console.log('PREDICTED REVENUE:')
+console.log('PREDICTED REVENUE:');
 
 const predictedRevenue = inventory.map((inventor) => {
   return (inventor.originalStock - inventor.sold) * inventor.price;
-})
+});
 
 function totalPredictedRevenue(arr) {
   let total = 0;
@@ -234,15 +234,18 @@ function totalPredictedRevenue(arr) {
 }
 
 console.log('€ ' + totalPredictedRevenue(predictedRevenue));
-console.log('\n')
+console.log('\n');
+
+const container2 = document.getElementById('projectedRevenue');
+container2.textContent = totalPredictedRevenue(predictedRevenue);
 
 // Opdracht 3B
 
 const revenueSoFar = inventory.map((inventor) => {
   return (inventor.originalStock * inventor.price) - ((inventor.originalStock - inventor.sold) * inventor.price );
-})
+});
 
-console.log('REVENUE SO FAR:')
+console.log('REVENUE SO FAR:');
 
 function totalRevenueSoFar(arr) {
   let total = 0;
@@ -250,4 +253,7 @@ function totalRevenueSoFar(arr) {
   return total;
 }
 
-console.log('€ ' + totalRevenueSoFar(revenueSoFar))
+console.log('€ ' + totalRevenueSoFar(revenueSoFar));
+
+const container3 = document.getElementById('achievedRevenue');
+container3.textContent = totalRevenueSoFar(revenueSoFar);
