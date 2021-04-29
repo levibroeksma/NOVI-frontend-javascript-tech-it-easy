@@ -168,16 +168,16 @@ const availableStocks = inventory.map((availableStock) => {
 
 console.log('DIT IS DE VOORRAAD PER TV-SOORT: ' + availableStocks);
 
-function availableForSale2(arr) {
+function availableForSale(arr) {
   let total = 0;
   arr.map((item) => { total += item;})
   return total;
 }
 
-console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale2(availableStocks));
+console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale(availableStocks));
 
 // const container = document.getElementById('amountToSell');
-// container.textContent = availableForSale2(availableStocks);
+// container.textContent = availableForSale(availableStocks);
 
 // Opdracht 2A
 
@@ -218,3 +218,36 @@ function sortByPrice(arr) {
 }
 
 console.log(sortByPrice(inventory));
+
+// Opdracht 3A
+
+console.log('PREDICTED REVENUE:')
+
+const predictedRevenue = inventory.map((inventor) => {
+  return (inventor.originalStock - inventor.sold) * inventor.price;
+})
+
+function totalPredictedRevenue(arr) {
+  let total = 0;
+  arr.map((item) => {total += item});
+  return total;
+}
+
+console.log('€ ' + totalPredictedRevenue(predictedRevenue));
+console.log('\n')
+
+// Opdracht 3B
+
+const revenueSoFar = inventory.map((inventor) => {
+  return (inventor.originalStock * inventor.price) - ((inventor.originalStock - inventor.sold) * inventor.price );
+})
+
+console.log('REVENUE SO FAR:')
+
+function totalRevenueSoFar(arr) {
+  let total = 0;
+  arr.map((item) => {total += item});
+  return total;
+}
+
+console.log('€ ' + totalRevenueSoFar(revenueSoFar))
