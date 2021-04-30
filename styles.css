@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
 }
 
 body {
@@ -15,15 +16,16 @@ body {
 h1 {
     font-size: 40px;
     color: forestgreen;
-}
-h2 {
-    font-weight: 100;
+    margin-bottom: 50px;
 }
 
-div {
-    padding: 30px 0 0 0;
-    width: 750px;
-    text-align: center;
+h2 {
+    font-weight: 100;
+    font-size: 22px;
+}
+
+.page {
+    max-width: 750px;
 }
 
 .display {
@@ -32,21 +34,31 @@ div {
     display: flex;
     margin-bottom: 30px;
 }
+.display > div {
+    width: calc(50% - 20px);
+    position: relative;
+    box-sizing: border-box;
+    padding: 30px;
+    height: 190px;
+}
 
 #amountToSell {
     color: red;
 }
 
+.projectedRevenue p {
+    font-size: 13px;
+}
+
 #projectedRevenue,
-.projectedRevenue span{
+.projectedRevenue span {
     position: relative;
     color: blue;
     width: 50%;
 }
 
 #achievedRevenue,
-.achievedRevenue span
-{
+.achievedRevenue span {
     position: relative;
     color: green;
     width: 50%;
@@ -61,9 +73,86 @@ div {
     font-size: 40px;
 }
 
+.projectedRevenue, .achievedRevenue {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.spanHolder {
+    border: 1px solid #000;
+    padding: 10px;
+border-radius: 8px;
+}
+
 .televisions {
     display: flex;
 }
 .televisions h3 {
     width: 50%;
+}
+
+.spotLight {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    box-sizing: border-box;
+    margin-top: 50px;
+}
+
+.spotLight h2 {
+    margin-bottom: 20px;
+}
+.spotLight span {
+    color: #329F5B;
+    font-weight: 300;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.spotLight p {
+    font-style: italic;
+    margin-top: 20px;
+}
+
+#containerForTvs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#containerForTvs div {
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.block {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.block p.sizes {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 15px;
+    line-height: 1.45em;
+    margin-top: 10px;
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+@media screen and (max-width: 770px) {
+    .page {
+        padding: 20px;
+    }
+    #containerForTvs div {
+        width: 100%;
+    }
 }

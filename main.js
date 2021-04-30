@@ -176,8 +176,8 @@ function availableForSale(arr) {
 
 console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale(availableStocks));
 
-// const container = document.getElementById('amountToSell');
-// container.textContent = availableForSale(availableStocks);
+const container = document.getElementById('amountToSell');
+container.textContent = availableForSale(availableStocks);
 
 // Opdracht 2A
 
@@ -236,8 +236,8 @@ function totalPredictedRevenue(arr) {
 console.log('€ ' + totalPredictedRevenue(predictedRevenue));
 console.log('\n');
 
-// const container2 = document.getElementById('projectedRevenue');
-// container2.textContent = totalPredictedRevenue(predictedRevenue);
+const container2 = document.getElementById('projectedRevenue');
+container2.textContent = totalPredictedRevenue(predictedRevenue);
 
 // Opdracht 3B
 
@@ -254,9 +254,9 @@ function totalRevenueSoFar(arr) {
 }
 
 console.log('€ ' + totalRevenueSoFar(revenueSoFar));
-//
-// const container3 = document.getElementById('achievedRevenue');
-// container3.textContent = totalRevenueSoFar(revenueSoFar);
+
+const container3 = document.getElementById('achievedRevenue');
+container3.textContent = totalRevenueSoFar(revenueSoFar);
 
 // Opdracht 4
 // const tvOne = document.getElementById('tvOne');
@@ -272,6 +272,8 @@ function printTitle(arrItem) {
   return arrItem.brand + ' ' + arrItem.type + ' - ' + arrItem.name;
 }
 
+
+
 console.log(printTitle(inventory[1]));
 
 // Opdracht 5B
@@ -282,11 +284,77 @@ function printPrice(arrItem) {
 
 console.log(printPrice(inventory[1]));
 
+// Opdracht 5 C
+
 function calcAvailableSizes(arr) {
   const availableSizes = arr.availableSizes.map((size) => {
-    return  size + ' inch (' + (size * 2.5) + 'cm)';
+    return  size + ' inch (' + (size * 2.5) + ' cm)';
   })
   return availableSizes.join(' | ');
 }
 
 console.log(calcAvailableSizes(inventory[4]));
+
+// Opdracht 5D
+
+// // Container met div's als child met de class 'block'
+// const containerForTvs = document.getElementById('containerForTvs');
+// const tvBlock = document.createElement('div');
+// tvBlock.setAttribute('class', 'block');
+// containerForTvs.appendChild(tvBlock);
+//
+// // Creëer een h2 met daarin de titel van de TV door gebruik te maken van de functie die de Titel genereerd.
+// const tvBlockTitle = document.createElement('h2');
+// tvBlockTitle.setAttribute('class', 'tvBlockTitle');
+// tvBlockTitle.textContent = printTitle(tv);
+// tvBlock.appendChild(tvBlockTitle);
+//
+// // Creëer een span die de prijs weergeeft door gebruik van de functie die de prijs print.
+// const tvBlockPrice =document.createElement('span');
+// tvBlockPrice.setAttribute('class', 'price');
+// tvBlockPrice.textContent = printPrice(tv);
+// tvBlock.appendChild(tvBlockPrice);
+//
+// // Creëer een p element waarin de beschikbare maten worden getoond
+// const tvBlockSizes = document.createElement('p');
+// tvBlockSizes.setAttribute('class', 'sizes');
+// tvBlockSizes.textContent = calcAvailableSizes(tv);
+// tvBlock.appendChild(tvBlockSizes);
+
+// Opdracht 5E
+// Schrijf een functie die bovenstaande nodes creëert voor alle tv's in de array
+
+function createTvElement(tv) {
+// Container met div's als child met de class 'block'
+  const containerForTvs = document.getElementById('containerForTvs');
+  const tvBlock = document.createElement('div');
+  tvBlock.setAttribute('class', 'block');
+  containerForTvs.appendChild(tvBlock);
+
+// Creëer een h2 met daarin de titel van de TV door gebruik te maken van de functie die de Titel genereerd.
+  const tvBlockTitle = document.createElement('h2');
+  tvBlockTitle.setAttribute('class', 'tvBlockTitle');
+  tvBlockTitle.textContent = printTitle(tv);
+  tvBlock.appendChild(tvBlockTitle);
+
+// Creëer een span die de prijs weergeeft door gebruik van de functie die de prijs print.
+  const tvBlockPrice =document.createElement('span');
+  tvBlockPrice.setAttribute('class', 'price');
+  tvBlockPrice.textContent = printPrice(tv);
+  tvBlock.appendChild(tvBlockPrice);
+
+// Creëer een p element waarin de beschikbare maten worden getoond
+  const tvBlockSizes = document.createElement('p');
+  tvBlockSizes.setAttribute('class', 'sizes');
+  tvBlockSizes.textContent = calcAvailableSizes(tv);
+  tvBlock.appendChild(tvBlockSizes);
+}
+
+function createOverviewTvs(arr) {
+  arr.map((tv) => {
+    createTvElement(tv);
+  })
+}
+// createTvElement(inventory[4])
+
+createOverviewTvs(inventory);
