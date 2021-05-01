@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: scroll;
 }
 
 h1 {
@@ -33,6 +34,7 @@ h2 {
     width: 100%;
     display: flex;
     margin-bottom: 30px;
+    justify-content: space-between;
 }
 .display > div {
     width: calc(50% - 20px);
@@ -149,6 +151,9 @@ border-radius: 8px;
 }
 
 @media screen and (max-width: 770px) {
+    body {
+        height: 100%;
+    }
     .page {
         padding: 20px;
     }
