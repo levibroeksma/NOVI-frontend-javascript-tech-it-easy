@@ -187,18 +187,18 @@ container.textContent = availableForSale(availableStocks);
 
 // Opdracht 2B
 
-const soldOut = inventory.filter((inventor) => {
-  return (inventor.originalStock - inventor.sold) === 0;
-});
+// const soldOut = inventory.filter((inventor) => {
+//   return (inventor.originalStock - inventor.sold) === 0;
+// });
 
 // console.log(soldOut);
 // console.log('\n');
 
 // Opdracht 2C
 
-const ambiLight = inventory.filter((inventor) => {
-  return inventor.options.ambiLight;
-});
+// const ambiLight = inventory.filter((inventor) => {
+//   return inventor.options.ambiLight;
+// });
 
 // console.log('ALLE TV\'S MET AMBILIGHT: ');
 // console.log(ambiLight);
@@ -365,15 +365,15 @@ function sortByPrice(arr) {
 }
 
 function tvsWithAmbilight(arr) {
-  const ambiLight = arr.filter((inventor) => {
+  arr.filter((inventor) => {
     return inventor.options.ambiLight;
   });
-  return ambiLight
+  return arr;
 }
 
 function soldOutTvs(arr) {
-  const soldOut = inventory.filter((inventor) => {
+  arr.filter((inventor) => {
     return (inventor.originalStock - inventor.sold) === 0;
   });
-  return soldOut;
+  return arr;
 }
