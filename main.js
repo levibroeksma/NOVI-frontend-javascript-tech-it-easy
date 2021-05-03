@@ -206,13 +206,13 @@ const ambiLight = inventory.filter((inventor) => {
 
 // Opdracht 2D
 // console.log('Sorted by Price: ');
-inventory.sort((a,b) => {return a.price - b.price});
-// console.log(inventory);
-
-function sortByPrice(arr) {
-  arr.sort((a,b) => {return a.price - b.price});
-  return arr;
-}
+// inventory.sort((a,b) => {return a.price - b.price});
+// // console.log(inventory);
+//
+// function sortByPrice(arr) {
+//   arr.sort((a,b) => {return a.price - b.price});
+//   return arr;
+// }
 
 // console.log(sortByPrice(inventory));
 
@@ -355,3 +355,25 @@ function createOverviewTvs(arr) {
 // createTvElement(inventory[4])
 
 createOverviewTvs(inventory);
+
+
+// Bonus assignment
+
+function sortByPrice(arr) {
+  arr.sort((a,b) => {return a.price - b.price});
+  return arr;
+}
+
+function tvsWithAmbilight(arr) {
+  const ambiLight = arr.filter((inventor) => {
+    return inventor.options.ambiLight;
+  });
+  return ambiLight
+}
+
+function soldOutTvs(arr) {
+  const soldOut = inventory.filter((inventor) => {
+    return (inventor.originalStock - inventor.sold) === 0;
+  });
+  return soldOut;
+}

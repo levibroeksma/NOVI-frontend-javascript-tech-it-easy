@@ -42,9 +42,9 @@
 
         </div>
         <div class="buttonHolder">
-            <button id="sortPrice">Sorteer op prijs</button>
-            <button id="showAmbilight">Ambilight TV's</button>
-            <button id="soldOut">Uitverkocht</button>
+            <button id="sortPrice" onclick="console.log(sortByPrice(inventory))">Sorteer op prijs</button>
+            <button id="showAmbilight" onclick="console.log(tvsWithAmbilight(inventory))">Ambilight TV's</button>
+            <button id="soldOut" onclick="console.log(soldOutTvs(inventory))">Uitverkocht</button>
         </div>
     </div>
     <script src="main.js"></script>
