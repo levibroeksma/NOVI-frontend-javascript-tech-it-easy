@@ -166,7 +166,6 @@ const availableStocks = inventory.map((availableStock) => {
   return availableStock.originalStock - availableStock.sold;
 });
 
-
 function availableForSale(arr) {
   let total = 0;
   arr.map((item) => { total += item;})
@@ -269,8 +268,6 @@ function printTitle(arrItem) {
   return arrItem.brand + ' ' + arrItem.type + ' - ' + arrItem.name;
 }
 
-
-
 // console.log(printTitle(inventory[1]));
 
 // Opdracht 5B
@@ -356,7 +353,6 @@ function createOverviewTvs(arr) {
 
 createOverviewTvs(inventory);
 
-
 // Bonus assignment
 
 function sortByPrice(arr) {
@@ -365,15 +361,15 @@ function sortByPrice(arr) {
 }
 
 function tvsWithAmbilight(arr) {
-  arr.filter((inventor) => {
+  const ambiLight = arr.filter((inventor) => {
     return inventor.options.ambiLight;
   });
-  return arr;
+  return ambiLight;
 }
 
 function soldOutTvs(arr) {
-  arr.filter((inventor) => {
+  const soldOut = arr.filter((inventor) => {
     return (inventor.originalStock - inventor.sold) === 0;
   });
-  return arr;
+  return soldOut;
 }

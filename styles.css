@@ -5,7 +5,6 @@
     box-sizing: border-box;
     text-align: center;
 }
-
 body {
     display: flex;
     justify-content: center;
@@ -19,12 +18,10 @@ h1 {
     color: forestgreen;
     margin-bottom: 50px;
 }
-
 h2 {
     font-weight: 100;
     font-size: 22px;
 }
-
 .page {
     max-width: 1200px;
     display: flex;
@@ -46,6 +43,9 @@ h2 {
     height: 190px;
 }
 
+.amountToSell {
+    margin-bottom: 20px;
+}
 #amountToSell {
     color: red;
 }
@@ -54,21 +54,18 @@ h2 {
     font-size: 13px;
     margin-top: -20px;
 }
-
 #projectedRevenue,
 .projectedRevenue span {
     position: relative;
     color: blue;
     width: 50%;
 }
-
 #achievedRevenue,
 .achievedRevenue span {
     position: relative;
     color: green;
     width: 50%;
 }
-
 #achievedRevenue,
 .achievedRevenue span,
 #amountToSell,
@@ -77,18 +74,18 @@ h2 {
     font-weight: bold;
     font-size: 40px;
 }
-
 .projectedRevenue, .achievedRevenue {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
 .spanHolder {
     border: 1px solid #000;
     padding: 10px;
     border-radius: 8px;
 }
+
+/*Highlighted televisions*/
 
 .televisions {
     display: flex;
@@ -97,6 +94,8 @@ h2 {
     width: 50%;
 }
 
+/* Spotlight */
+
 .spotLight {
     background: rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -104,7 +103,6 @@ h2 {
     box-sizing: border-box;
     margin-top: 50px;
 }
-
 .spotLight h2 {
     margin-bottom: 20px;
 }
@@ -114,11 +112,12 @@ h2 {
     font-size: 30px;
     margin: 20px;
 }
-
 .spotLight p {
     font-style: italic;
     margin-top: 20px;
 }
+
+/* Block's */
 
 #containerForTvs {
     display: flex;
@@ -127,7 +126,6 @@ h2 {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
 #containerForTvs div {
     width: calc(50% - 20px);
     margin-bottom: 20px;
@@ -135,18 +133,15 @@ h2 {
     border-radius: 8px;
     padding: 20px;
 }
-
 .block {
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-
 .block span.price {
     margin: 15px;
 }
-
 .block p.sizes {
     font-style: italic;
     font-weight: 100;
@@ -156,10 +151,11 @@ h2 {
     border-top: 1px solid black;
     padding-top: 10px;
 }
-
 .block h2 {
     font-size: 20px;
 }
+
+/*Buttons*/
 
 .buttonHolder {
     max-width: 800px;
@@ -168,7 +164,6 @@ h2 {
     min-width: 500px;
     margin-top: 30px;
 }
-
 button {
     width: 130px;
     height: 40px;
@@ -180,23 +175,6 @@ button {
     transition: all .2s ease;
     font-size: 14px;
 }
-
 button:hover {
     background: #1e753f;
-}
-
-@media screen and (max-width: 1220px) {
-    .page {
-        padding: 20px;
-    }
-}
-
-@media screen and (max-width: 770px) {
-    body {
-        height: 100%;
-    }
-
-    #containerForTvs div {
-        width: 100%;
-    }
 }

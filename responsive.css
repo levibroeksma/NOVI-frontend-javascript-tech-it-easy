@@ -1,0 +1,38 @@
+@media screen and (max-width: 1220px) {
+    .page {
+        padding: 20px;
+    }
+    .buttonHolder {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    body {
+        height: 100%;
+    }
+    #containerForTvs div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .page {
+        width: 100%;
+    }
+    .display {
+        flex-direction: column;
+    }
+    .display > div {
+        width: 100%;
+    }
+
+    .buttonHolder {
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttonHolder button {
+        margin-bottom: 20px;
+    }
+}
