@@ -166,7 +166,6 @@ const availableStocks = inventory.map((availableStock) => {
   return availableStock.originalStock - availableStock.sold;
 });
 
-console.log('DIT IS DE VOORRAAD PER TV-SOORT: ' + availableStocks);
 
 function availableForSale(arr) {
   let total = 0;
@@ -174,19 +173,17 @@ function availableForSale(arr) {
   return total;
 }
 
-console.log('DIT IS HET TOTAAL WAT NOG VERKOCHT MOET WORDEN: ' + availableForSale(availableStocks));
-
 const container = document.getElementById('amountToSell');
 container.textContent = availableForSale(availableStocks);
 
 // Opdracht 2A
 
-const tvTypes = inventory.map((inventor) => {
-  return inventor.type;
-});
-
-console.log(tvTypes);
-console.log('\n');
+// const tvTypes = inventory.map((inventor) => {
+//   return inventor.type;
+// });
+//
+// console.log(tvTypes);
+// console.log('\n');
 
 // Opdracht 2B
 
@@ -194,8 +191,8 @@ const soldOut = inventory.filter((inventor) => {
   return (inventor.originalStock - inventor.sold) === 0;
 });
 
-console.log(soldOut);
-console.log('\n');
+// console.log(soldOut);
+// console.log('\n');
 
 // Opdracht 2C
 
@@ -203,25 +200,25 @@ const ambiLight = inventory.filter((inventor) => {
   return inventor.options.ambiLight;
 });
 
-console.log('ALLE TV\'S MET AMBILIGHT: ');
-console.log(ambiLight);
-console.log('\n');
+// console.log('ALLE TV\'S MET AMBILIGHT: ');
+// console.log(ambiLight);
+// console.log('\n');
 
 // Opdracht 2D
-console.log('Sorted by Price: ');
+// console.log('Sorted by Price: ');
 inventory.sort((a,b) => {return a.price - b.price});
-console.log(inventory);
+// console.log(inventory);
 
 function sortByPrice(arr) {
   arr.sort((a,b) => {return a.price - b.price});
   return arr;
 }
 
-console.log(sortByPrice(inventory));
+// console.log(sortByPrice(inventory));
 
 // Opdracht 3A
 
-console.log('PREDICTED REVENUE:');
+// console.log('PREDICTED REVENUE:');
 
 const predictedRevenue = inventory.map((inventor) => {
   return (inventor.originalStock - inventor.sold) * inventor.price;
@@ -233,8 +230,8 @@ function totalPredictedRevenue(arr) {
   return total;
 }
 
-console.log('€ ' + totalPredictedRevenue(predictedRevenue));
-console.log('\n');
+// console.log('€ ' + totalPredictedRevenue(predictedRevenue));
+// console.log('\n');
 
 const container2 = document.getElementById('projectedRevenue');
 container2.textContent = totalPredictedRevenue(predictedRevenue);
@@ -245,7 +242,7 @@ const revenueSoFar = inventory.map((inventor) => {
   return (inventor.originalStock * inventor.price) - ((inventor.originalStock - inventor.sold) * inventor.price );
 });
 
-console.log('REVENUE SO FAR:');
+// console.log('REVENUE SO FAR:');
 
 function totalRevenueSoFar(arr) {
   let total = 0;
@@ -253,7 +250,7 @@ function totalRevenueSoFar(arr) {
   return total;
 }
 
-console.log('€ ' + totalRevenueSoFar(revenueSoFar));
+// console.log('€ ' + totalRevenueSoFar(revenueSoFar));
 
 const container3 = document.getElementById('achievedRevenue');
 container3.textContent = totalRevenueSoFar(revenueSoFar);
@@ -265,7 +262,7 @@ container3.textContent = totalRevenueSoFar(revenueSoFar);
 // const tvTwo = document.getElementById('tvTwo');
 // tvTwo.textContent = inventory[1].type;
 
-console.log('\n')
+// console.log('\n')
 // Opdracht 5A
 
 function printTitle(arrItem) {
@@ -274,7 +271,7 @@ function printTitle(arrItem) {
 
 
 
-console.log(printTitle(inventory[1]));
+// console.log(printTitle(inventory[1]));
 
 // Opdracht 5B
 
@@ -282,7 +279,7 @@ function printPrice(arrItem) {
   return '€' + arrItem.price + ',-';
 }
 
-console.log(printPrice(inventory[1]));
+// console.log(printPrice(inventory[1]));
 
 // Opdracht 5 C
 
@@ -293,7 +290,7 @@ function calcAvailableSizes(arr) {
   return availableSizes.join(' | ');
 }
 
-console.log(calcAvailableSizes(inventory[4]));
+// console.log(calcAvailableSizes(inventory[4]));
 
 // Opdracht 5D
 

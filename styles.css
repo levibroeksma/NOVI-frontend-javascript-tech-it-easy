@@ -26,21 +26,23 @@ h2 {
 }
 
 .page {
-    max-width: 750px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .display {
     position: relative;
     width: 100%;
     display: flex;
-    margin-bottom: 30px;
     justify-content: space-between;
 }
 .display > div {
     width: calc(50% - 20px);
     position: relative;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 0 0 30px 0;
     height: 190px;
 }
 
@@ -50,6 +52,7 @@ h2 {
 
 .projectedRevenue p {
     font-size: 13px;
+    margin-top: -20px;
 }
 
 #projectedRevenue,
@@ -84,7 +87,7 @@ h2 {
 .spanHolder {
     border: 1px solid #000;
     padding: 10px;
-border-radius: 8px;
+    border-radius: 8px;
 }
 
 .televisions {
@@ -140,23 +143,59 @@ border-radius: 8px;
     justify-content: space-evenly;
 }
 
+.block span.price {
+    margin: 15px;
+}
+
 .block p.sizes {
     font-style: italic;
     font-weight: 100;
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.45em;
     margin-top: 10px;
     border-top: 1px solid black;
     padding-top: 10px;
 }
 
+.block h2 {
+    font-size: 20px;
+}
+
+.buttonHolder {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 500px;
+    margin-top: 30px;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    background: #329F5B;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #1e753f;
+}
+
+@media screen and (max-width: 1220px) {
+    .page {
+        padding: 20px;
+    }
+}
+
 @media screen and (max-width: 770px) {
     body {
         height: 100%;
     }
-    .page {
-        padding: 20px;
-    }
+
     #containerForTvs div {
         width: 100%;
     }
