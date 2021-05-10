@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
+    <div class="page">
+        <h1>TECH IS EASY</h1>
+        <div class="amountToSell">
+            <h2>De voorraad TV's betreft:</h2>
+            <span id="amountToSell"></span>
+        </div>
+        <div class="display">
+            <div class="projectedRevenue">
+                <h2>Nog te behalen omzet:</h2>
+                <p>(op basis van beschikbare voorraad)</p>
+                <div class="spanHolder">
+                 <span>€: </span><span id="projectedRevenue"></span>
+                </div>
+            </div>
+            <div class="achievedRevenue">
+                <h2>De omzet tot dusver:</h2>
+                <div class="spanHolder">
+                 <span>€: </span><span id="achievedRevenue"></span>
+                </div>
+            </div>
+        </div>
+<!--        <h2>Uitgelichte televisies:</h2>-->
+<!--        <div class="televisions">-->
+<!--            <h3 id="tvOne"></h3>-->
+<!--            <h3 id="tvTwo"></h3>-->
+<!--        </div>-->
+<!--        <div class="spotLight">-->
+<!--            <h2 id="titleTv"></h2>-->
+<!--            <span id="priceTv"></span>-->
+<!--            <p id="availableSizes"></p>-->
+<!--        </div>-->
 
+        <div id="containerForTvs">
+
+        </div>
+        <div class="buttonHolder">
+            <button id="sortPrice" onclick="console.log(sortByPrice(inventory))">Sorteer op prijs</button>
+            <button id="showAmbilight" onclick="console.log(tvsWithAmbilight(inventory))">Ambilight TV's</button>
+            <button id="soldOut" onclick="console.log(soldOutTvs(inventory))">Uitverkocht</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
 </body>
 </html>

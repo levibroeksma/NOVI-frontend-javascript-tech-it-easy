@@ -161,3 +161,215 @@ const inventory = [
     sold: 8,
   },
 ];
+
+const availableStocks = inventory.map((availableStock) => {
+  return availableStock.originalStock - availableStock.sold;
+});
+
+function availableForSale(arr) {
+  let total = 0;
+  arr.map((item) => { total += item;})
+  return total;
+}
+
+const container = document.getElementById('amountToSell');
+container.textContent = availableForSale(availableStocks);
+
+// Opdracht 2A
+
+// const tvTypes = inventory.map((inventor) => {
+//   return inventor.type;
+// });
+//
+// console.log(tvTypes);
+// console.log('\n');
+
+// Opdracht 2B
+
+// const soldOut = inventory.filter((inventor) => {
+//   return (inventor.originalStock - inventor.sold) === 0;
+// });
+
+// console.log(soldOut);
+// console.log('\n');
+
+// Opdracht 2C
+
+// const ambiLight = inventory.filter((inventor) => {
+//   return inventor.options.ambiLight;
+// });
+
+// console.log('ALLE TV\'S MET AMBILIGHT: ');
+// console.log(ambiLight);
+// console.log('\n');
+
+// Opdracht 2D
+// console.log('Sorted by Price: ');
+// inventory.sort((a,b) => {return a.price - b.price});
+// // console.log(inventory);
+//
+// function sortByPrice(arr) {
+//   arr.sort((a,b) => {return a.price - b.price});
+//   return arr;
+// }
+
+// console.log(sortByPrice(inventory));
+
+// Opdracht 3A
+
+// console.log('PREDICTED REVENUE:');
+
+const predictedRevenue = inventory.map((inventor) => {
+  return (inventor.originalStock - inventor.sold) * inventor.price;
+});
+
+function totalPredictedRevenue(arr) {
+  let total = 0;
+  arr.map((item) => {total += item});
+  return total;
+}
+
+// console.log('€ ' + totalPredictedRevenue(predictedRevenue));
+// console.log('\n');
+
+const container2 = document.getElementById('projectedRevenue');
+container2.textContent = totalPredictedRevenue(predictedRevenue);
+
+// Opdracht 3B
+
+const revenueSoFar = inventory.map((inventor) => {
+  return (inventor.originalStock * inventor.price) - ((inventor.originalStock - inventor.sold) * inventor.price );
+});
+
+// console.log('REVENUE SO FAR:');
+
+function totalRevenueSoFar(arr) {
+  let total = 0;
+  arr.map((item) => {total += item});
+  return total;
+}
+
+// console.log('€ ' + totalRevenueSoFar(revenueSoFar));
+
+const container3 = document.getElementById('achievedRevenue');
+container3.textContent = totalRevenueSoFar(revenueSoFar);
+
+// Opdracht 4
+// const tvOne = document.getElementById('tvOne');
+// tvOne.textContent = inventory[0].type;
+//
+// const tvTwo = document.getElementById('tvTwo');
+// tvTwo.textContent = inventory[1].type;
+
+// console.log('\n')
+// Opdracht 5A
+
+function printTitle(arrItem) {
+  return arrItem.brand + ' ' + arrItem.type + ' - ' + arrItem.name;
+}
+
+// console.log(printTitle(inventory[1]));
+
+// Opdracht 5B
+
+function printPrice(arrItem) {
+  return '€' + arrItem.price + ',-';
+}
+
+// console.log(printPrice(inventory[1]));
+
+// Opdracht 5 C
+
+function calcAvailableSizes(arr) {
+  const availableSizes = arr.availableSizes.map((size) => {
+    return  size + ' inch (' + (size * 2.5) + ' cm)';
+  })
+  return availableSizes.join(' | ');
+}
+
+// console.log(calcAvailableSizes(inventory[4]));
+
+// Opdracht 5D
+
+// // Container met div's als child met de class 'block'
+// const containerForTvs = document.getElementById('containerForTvs');
+// const tvBlock = document.createElement('div');
+// tvBlock.setAttribute('class', 'block');
+// containerForTvs.appendChild(tvBlock);
+//
+// // Creëer een h2 met daarin de titel van de TV door gebruik te maken van de functie die de Titel genereerd.
+// const tvBlockTitle = document.createElement('h2');
+// tvBlockTitle.setAttribute('class', 'tvBlockTitle');
+// tvBlockTitle.textContent = printTitle(tv);
+// tvBlock.appendChild(tvBlockTitle);
+//
+// // Creëer een span die de prijs weergeeft door gebruik van de functie die de prijs print.
+// const tvBlockPrice =document.createElement('span');
+// tvBlockPrice.setAttribute('class', 'price');
+// tvBlockPrice.textContent = printPrice(tv);
+// tvBlock.appendChild(tvBlockPrice);
+//
+// // Creëer een p element waarin de beschikbare maten worden getoond
+// const tvBlockSizes = document.createElement('p');
+// tvBlockSizes.setAttribute('class', 'sizes');
+// tvBlockSizes.textContent = calcAvailableSizes(tv);
+// tvBlock.appendChild(tvBlockSizes);
+
+// Opdracht 5E
+// Schrijf een functie die bovenstaande nodes creëert voor alle tv's in de array
+
+function createTvElement(tv) {
+// Container met div's als child met de class 'block'
+  const containerForTvs = document.getElementById('containerForTvs');
+  const tvBlock = document.createElement('div');
+  tvBlock.setAttribute('class', 'block');
+  containerForTvs.appendChild(tvBlock);
+
+// Creëer een h2 met daarin de titel van de TV door gebruik te maken van de functie die de Titel genereerd.
+  const tvBlockTitle = document.createElement('h2');
+  tvBlockTitle.setAttribute('class', 'tvBlockTitle');
+  tvBlockTitle.textContent = printTitle(tv);
+  tvBlock.appendChild(tvBlockTitle);
+
+// Creëer een span die de prijs weergeeft door gebruik van de functie die de prijs print.
+  const tvBlockPrice =document.createElement('span');
+  tvBlockPrice.setAttribute('class', 'price');
+  tvBlockPrice.textContent = printPrice(tv);
+  tvBlock.appendChild(tvBlockPrice);
+
+// Creëer een p element waarin de beschikbare maten worden getoond
+  const tvBlockSizes = document.createElement('p');
+  tvBlockSizes.setAttribute('class', 'sizes');
+  tvBlockSizes.textContent = calcAvailableSizes(tv);
+  tvBlock.appendChild(tvBlockSizes);
+}
+
+function createOverviewTvs(arr) {
+  arr.map((tv) => {
+    createTvElement(tv);
+  })
+}
+// createTvElement(inventory[4])
+
+createOverviewTvs(inventory);
+
+// Bonus assignment
+
+function sortByPrice(arr) {
+  arr.sort((a,b) => {return a.price - b.price});
+  return arr;
+}
+
+function tvsWithAmbilight(arr) {
+  const ambiLight = arr.filter((inventor) => {
+    return inventor.options.ambiLight;
+  });
+  return ambiLight;
+}
+
+function soldOutTvs(arr) {
+  const soldOut = arr.filter((inventor) => {
+    return (inventor.originalStock - inventor.sold) === 0;
+  });
+  return soldOut;
+}
